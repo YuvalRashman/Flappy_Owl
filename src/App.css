@@ -1,0 +1,134 @@
+/* src/App.css */
+
+.App {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #000;
+    overflow: hidden;
+    background-image: url("/src/sprites/sky2.png"); /* Set the correct path to your image */
+    background-size: 600px 600px; /* Adjusted background size for seamless repetition */
+    animation: moveSky 20s linear infinite; /* Adjusted animation duration for slower movement */
+}
+
+@keyframes moveSky {
+    0% {
+        background-position: 0 0; /* Start from initial background position */
+    }
+    100% {
+        background-position: -600px 0; /* Move background to the left by 600px */
+    }
+}
+
+
+/* Other styles remain unchanged */
+
+.game-over {
+    background-color: #ff6347; /* Tomato */
+    animation-play-state: paused; /* Pause the animation when the game is over */
+}
+
+.game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.game-over-message button {
+    background-color: #4c4c4c; /* Tomato color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.game-over-message button:hover {
+    background-color: #6b6b6b; /* Darker tomato color */
+}
+
+.bird {
+    position: absolute;
+    width: 52px;
+    height: 62px;
+    user-select: none;
+}
+
+.pipe {
+    position: absolute;
+    width: 100px;
+    height: 600px;
+}
+
+.score {
+    font-family: 'FlappyBird', sans-serif;
+    font-size: 48px;
+    color: black;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Set a higher z-index to place the score in front */
+}
+
+/* src/components/StartMenu.css */
+.start-menu {
+    text-align: center;
+}
+
+.start-menu h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #df0adb;
+}
+
+.leaderboard {
+    margin-bottom: 20px;
+}
+
+.leaderboard h2 {
+    font-size: 40px; /* Increased font size */
+    color: #fbdf09; /* Dark yellow color */
+    margin-bottom: 10px; /* Added margin for spacing */
+}
+
+.leaderboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.leaderboard li {
+    font-size: 30px; /* Decreased font size for list items */
+    margin: 3px 0; /* Reduced margin for list items */
+}
+
+
+.best-score {
+    margin-bottom: 20px;
+}
+
+.best-score h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.start-button {
+    padding: 15px 30px;
+    font-size: 24px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-button:hover {
+    background-color: #45a049; /* Darker green */
+}
